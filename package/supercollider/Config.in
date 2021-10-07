@@ -1,0 +1,18 @@
+config BR2_PACKAGE_SUPERCOLLIDER
+        bool "supercollider"
+	depends on BR2_USE_WCHAR
+        select BR2_PACKAGE_LIBSAMPLERATE
+        select BR2_PACKAGE_LIBSNDFILE
+        select BR2_PACKAGE_ALSA_LIB
+        select BR2_PACKAGE_AVAHI
+        select BR2_PACKAGE_READLINE
+        select BR2_PACKAGE_FFTW
+        select BR2_PACKAGE_NCURSES
+        help
+          SuperCollider is a platform for audio synthesis and algorithmic
+          composition.
+
+          https://supercollider.github.io/
+
+comment "supercollider needs a toolchain w/ wchar"
+	depends on !BR2_USE_WCHAR
